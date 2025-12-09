@@ -1,0 +1,69 @@
+body { 
+    font-family: Arial, sans-serif; 
+    max-width: 800px; 
+    margin: 50px auto; 
+    padding: 20px; 
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.tarjeton { 
+    background: #f0f8ff; 
+    border: 3px solid #003366; 
+    padding: 30px; 
+    border-radius: 15px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.candidato { 
+    padding: 15px; 
+    margin: 10px 0; 
+    background: white; 
+    border-left: 5px solid #cc0000; 
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.candidato:hover { 
+    background: #e6f3ff; 
+    transform: translateX(5px);
+}
+
+button { 
+    background: #cc0000; 
+    color: white; 
+    padding: 12px 24px; 
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    margin: 5px; 
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+button:hover { 
+    background: #990000; 
+    transform: scale(1.05);
+}
+
+#resultado { 
+    background: #f9f9f9; 
+    padding: 25px; 
+    border-radius: 10px; 
+    white-space: pre-wrap; 
+    border-left: 5px solid #003366;
+    margin-top: 30px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+}
+
+h1 { 
+    color: #003366; 
+    text-align: center; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+h2 { 
+    color: #cc0000; 
+    text-align: center;
+}
