@@ -1,0 +1,7 @@
+co\edu\udistrital\elecciones\service\EleccionesService.class
+co\edu\udistrital\elecciones\model\EstadisticaDTO.class
+co\edu\udistrital\elecciones\controller\EleccionesController.class
+co\edu\udistrital\elecciones\EleccionesLibrosApplication.class
+co\edu\udistrital\elecciones\model\VotoDTO.class
+co\edu\udistrital\elecciones\repository\VotacionRepository.class
+co\edu\udistrital\elecciones\model\CandidatoDTO.class
