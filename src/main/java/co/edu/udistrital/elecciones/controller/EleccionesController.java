@@ -37,6 +37,6 @@ public class EleccionesController {
 
     @GetMapping("/autor")
     public ResponseEntity<String> getAutor() {
-        return ResponseEntity.ok("Diego Muñoz - Universidad Distrital");
+        return ResponseEntity.ok("Diego Bautista - Geronimo Alarcón - Universidad Distrital");
     }
 }

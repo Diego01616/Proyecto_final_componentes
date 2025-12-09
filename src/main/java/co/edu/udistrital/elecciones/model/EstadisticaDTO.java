@@ -7,27 +7,31 @@ public class EstadisticaDTO {
     private List<CandidatoDTO> candidatos;
     private int totalVotos;
     private LocalDateTime fechaConsulta;
-    
-    // Constructor vacío
-    public EstadisticaDTO() {}
-    
-    // Getters y Setters
-    public List<CandidatoDTO> getCandidatos() { 
-        return candidatos; 
+
+    public EstadisticaDTO() {
     }
-    public void setCandidatos(List<CandidatoDTO> candidatos) { 
-        this.candidatos = candidatos; 
+
+    public List<CandidatoDTO> getCandidatos() {
+        return candidatos;
     }
-    public int getTotalVotos() { 
-        return totalVotos; 
+
+    public void setCandidatos(List<CandidatoDTO> candidatos) {
+        this.candidatos = candidatos;
     }
-    public void setTotalVotos(int totalVotos) { 
-        this.totalVotos = totalVotos; 
+
+    public int getTotalVotos() {
+        return totalVotos;
     }
-    public LocalDateTime getFechaConsulta() { 
-        return fechaConsulta; 
+
+    public void setTotalVotos(int totalVotos) {
+        this.totalVotos = totalVotos;
     }
-    public void setFechaConsulta(LocalDateTime fechaConsulta) { 
-        this.fechaConsulta = fechaConsulta; 
+
+    public LocalDateTime getFechaConsulta() {
+        return fechaConsulta;
+    }
+
+    public void setFechaConsulta(LocalDateTime fechaConsulta) {
+        this.fechaConsulta = fechaConsulta;
     }
 }
