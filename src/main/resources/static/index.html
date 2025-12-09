@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Elecciones Libros</title></head>
+<body>
+    <h1>TARJETÓN ELECCIONES LIBROS</h1>
+    <button onclick="cargarTarjeton()">Ver Tarjetón</button>
+    <button onclick="votar(3)">Votar #3</button>
+    <pre id="resultado"></pre>
+
+    <script>
+    async function cargarTarjeton() {
+        const res = await fetch('/api/elecciones/tarjeton');
+        const data = await res.json();
+        document.getElementById('resultado').textContent = 
+            data.map(c => `${c.numero}. ${c.nombreLibro} - ${c.partido} (${c.votos} votos)`).join('\n');
+    }
+    </script>
+</body>
+</html>
