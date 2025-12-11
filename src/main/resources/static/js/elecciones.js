@@ -128,7 +128,7 @@ async function cargarAutor() {
     try {
         const res = await fetch(`${API_BASE}/autor`);
         const autor = await res.text();
-        mostrar(`👤 ${autor}`);
+        mostrar(` ${autor}`);
     } catch (e) {
         mostrar("Error cargando autor");
     }

@@ -1,7 +1,7 @@
-C:\Users\Administrador\Documents\proyecto_final\Proyecto_final_componentes\src\main\java\co\edu\udistrital\elecciones\model\CandidatoDTO.java
-C:\Users\Administrador\Documents\proyecto_final\Proyecto_final_componentes\src\main\java\co\edu\udistrital\elecciones\repository\VotacionRepository.java
-C:\Users\Administrador\Documents\proyecto_final\Proyecto_final_componentes\src\main\java\co\edu\udistrital\elecciones\model\EstadisticaDTO.java
-C:\Users\Administrador\Documents\proyecto_final\Proyecto_final_componentes\src\main\java\co\edu\udistrital\elecciones\service\EleccionesService.java
-C:\Users\Administrador\Documents\proyecto_final\Proyecto_final_componentes\src\main\java\co\edu\udistrital\elecciones\EleccionesLibrosApplication.java
-C:\Users\Administrador\Documents\proyecto_final\Proyecto_final_componentes\src\main\java\co\edu\udistrital\elecciones\model\VotoDTO.java
-C:\Users\Administrador\Documents\proyecto_final\Proyecto_final_componentes\src\main\java\co\edu\udistrital\elecciones\controller\EleccionesController.java
+/usr/src/mymaven/src/main/java/co/edu/udistrital/elecciones/model/CandidatoDTO.java
+/usr/src/mymaven/src/main/java/co/edu/udistrital/elecciones/controller/EleccionesController.java
+/usr/src/mymaven/src/main/java/co/edu/udistrital/elecciones/model/EstadisticaDTO.java
+/usr/src/mymaven/src/main/java/co/edu/udistrital/elecciones/repository/VotacionRepository.java
+/usr/src/mymaven/src/main/java/co/edu/udistrital/elecciones/EleccionesLibrosApplication.java
+/usr/src/mymaven/src/main/java/co/edu/udistrital/elecciones/service/EleccionesService.java
+/usr/src/mymaven/src/main/java/co/edu/udistrital/elecciones/model/VotoDTO.java
