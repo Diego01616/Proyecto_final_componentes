@@ -1,69 +1,132 @@
-body { 
-    font-family: Arial, sans-serif; 
-    max-width: 800px; 
-    margin: 50px auto; 
-    padding: 20px; 
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+/* ====== ESTILOS GENERALES ====== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.tarjeton { 
-    background: #f0f8ff; 
-    border: 3px solid #003366; 
-    padding: 30px; 
-    border-radius: 15px; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+body {
+    font-family: "Inter", sans-serif;
+    background: #f1f3f7;
+    color: #1f2937;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.candidato { 
-    padding: 15px; 
-    margin: 10px 0; 
-    background: white; 
-    border-left: 5px solid #cc0000; 
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-.candidato:hover { 
-    background: #e6f3ff; 
-    transform: translateX(5px);
-}
-
-button { 
-    background: #cc0000; 
-    color: white; 
-    padding: 12px 24px; 
-    border: none; 
-    border-radius: 8px; 
-    cursor: pointer; 
-    margin: 5px; 
-    font-size: 16px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-button:hover { 
-    background: #990000; 
-    transform: scale(1.05);
-}
-
-#resultado { 
-    background: #f9f9f9; 
-    padding: 25px; 
-    border-radius: 10px; 
-    white-space: pre-wrap; 
-    border-left: 5px solid #003366;
-    margin-top: 30px;
-    font-family: 'Courier New', monospace;
-    font-size: 14px;
-}
-
-h1 { 
-    color: #003366; 
-    text-align: center; 
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-}
-
-h2 { 
-    color: #cc0000; 
+/* ====== HEADER ====== */
+.encabezado {
+    background: #1e3a8a;
+    color: white;
     text-align: center;
+    padding: 35px 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.encabezado h1 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.subtitulo {
+    margin-top: 6px;
+    font-weight: 300;
+    font-size: 15px;
+    opacity: 0.9;
+}
+
+/* ====== TARJETA PRINCIPAL ====== */
+.tarjeta {
+    background: white;
+    width: 90%;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+}
+
+/* ====== BOTONES ====== */
+
+.btn {
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s ease;
+    user-select: none;
+}
+
+/* Botones secundarios */
+.btn.sec {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.btn.sec:hover {
+    background: #d1d5db;
+}
+
+/* Botones de voto */
+.btn.voto {
+    width: 100%;
+    text-align: left;
+    background: #1e40af;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.btn.voto:hover {
+    background: #1e3a8a;
+}
+
+.voto-blanco {
+    background: #374151 !important;
+}
+
+/* ====== SECCIONES ====== */
+.acciones {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.titulo-seccion {
+    font-size: 20px;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.instruccion {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #4b5563;
+}
+
+.votos {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+/* ====== RESULTADO ====== */
+.resultado {
+    background: #eef2ff;
+    padding: 16px;
+    border-left: 5px solid #4338ca;
+    border-radius: 6px;
+    font-weight: 500;
+    color: #1e3a8a;
+}
+
+/* ====== FOOTER ====== */
+.pie {
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    color: #6b7280;
+    font-size: 14px;
 }

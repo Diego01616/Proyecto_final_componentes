@@ -2,29 +2,43 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Elecciones Presidenciales - Nombres de Libros</title>
-    <link rel="stylesheet" href="/css/estilos.css">
+    <title>Elecciones Libros 2025</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <h1>ELECCIONES PRESIDENCIALES 2025</h1>
-    <h2>Tema: Nombres de Libros</h2>
-    
-    <div class="tarjeton">
-        <button onclick="cargarTarjeton()">Ver Tarjetón</button>
-        <button onclick="cargarEstadisticas()">Estadísticas</button>
-        <button onclick="cargarAutor()">Autor</button>
-        
-        <h3> Votar (elige número 1-6):</h3>
-        <button onclick="votar(1)">1️ Cien Años</button>
-        <button onclick="votar(2)">2️ Amor en los Tiempos</button>
-        <button onclick="votar(3)">3️ Crónica de una Muerte</button>
-        <button onclick="votar(4)">4️ Otoño del Patriarca</button>
-        <button onclick="votar(5)">5️ Hoja de Mar</button>
-        <button onclick="votar(6)">6️ Voto en Blanco</button>
-    </div>
+    <header class="encabezado">
+        <h1>Elecciones Libros 2025</h1>
+        <p class="subtitulo">Sistema de Votación – Tema: Nombres de Libros</p>
+    </header>
 
-    <div id="resultado">Cargando...</div>
+    <main class="tarjeta">
+        <section class="acciones">
+            <button class="btn sec" onclick="cargarTarjeton()">Tarjetón</button>
+            <button class="btn sec" onclick="cargarEstadisticas()">Estadísticas</button>
+            <button class="btn sec" onclick="cargarAutor()">Autor</button>
+        </section>
 
-    <script src="/js/elecciones.js"></script>
+        <h3 class="titulo-seccion">Emitir voto</h3>
+        <p class="instruccion">Selecciona una de las opciones (1 a 6):</p>
+
+        <section class="votos">
+            <button class="btn voto" onclick="votar(1)">1. Cien Años de Soledad</button>
+            <button class="btn voto" onclick="votar(2)">2. Amor en los Tiempos del Cólera</button>
+            <button class="btn voto" onclick="votar(3)">3. Crónica de una Muerte Anunciada</button>
+            <button class="btn voto" onclick="votar(4)">4. El Otoño del Patriarca</button>
+            <button class="btn voto" onclick="votar(5)">5. Hoja de Mar</button>
+            <button class="btn voto voto-blanco" onclick="votar(6)">6. Voto en Blanco</button>
+        </section>
+
+        <div id="resultado" class="resultado">Esperando acción...</div>
+    </main>
+
+    <footer class="pie">
+        <p>© 2025 – Sistema Electoral de Prueba</p>
+    </footer>
+
+    <script src="js/elecciones.js"></script>
 </body>
 </html>
