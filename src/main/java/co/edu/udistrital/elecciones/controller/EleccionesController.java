@@ -20,8 +20,9 @@ import co.edu.udistrital.elecciones.service.EleccionesService;
 @RequestMapping("/api/elecciones")
 @CrossOrigin(origins = "*")
 public class EleccionesController {
-    
-    @Autowired private EleccionesService service;
+
+    @Autowired
+    private EleccionesService service;
 
     @GetMapping("/tarjeton")
     public ResponseEntity<List<CandidatoDTO>> getTarjeton() {
@@ -30,8 +31,7 @@ public class EleccionesController {
 
     @PostMapping("/votar")
     public ResponseEntity<String> votar(@RequestBody VotoDTO voto) {
-        String resultado = service.registrarVoto(voto.getNumero());
-        return ResponseEntity.ok(resultado);
+        return ResponseEntity.ok(service.registrarVoto(voto.getNumero()));
     }
 
     @GetMapping("/votos")
@@ -47,5 +47,11 @@ public class EleccionesController {
     @GetMapping("/autor")
     public ResponseEntity<String> getAutor() {
         return ResponseEntity.ok("Juan David - Diego Bautista - Geronimo Alarcón - Universidad Distrital");
+    }
+
+    @PostMapping("/registrar")
+    public ResponseEntity<String> registrar(@RequestBody CandidatoDTO candidato) {
+        service.registrarCandidato(candidato);
+        return ResponseEntity.ok("Candidato registrado correctamente");
     }
 }

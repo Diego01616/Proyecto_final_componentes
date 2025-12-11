@@ -1,31 +1,40 @@
 package co.edu.udistrital.elecciones.service;
 
-import co.edu.udistrital.elecciones.model.*;
-import co.edu.udistrital.elecciones.repository.VotacionRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.List;
+
+import co.edu.udistrital.elecciones.model.CandidatoDTO;
+import co.edu.udistrital.elecciones.model.EstadisticaDTO;
+import co.edu.udistrital.elecciones.repository.VotacionRepository;
 
 @Service
 public class EleccionesService {
-    @Autowired private VotacionRepository repo;
-    
+
+    @Autowired
+    private VotacionRepository repo;
+
     public List<CandidatoDTO> getTarjeton() {
-        return repo.getCandidatos();
+        return repo.getTarjeton();
     }
-    
+
     public String registrarVoto(int numero) {
-        if (numero < 1 || numero > 6) 
-            return "Voto inválido (1-6)";
         repo.registrarVoto(numero);
-        return "Voto registrado para candidato " + numero;
+        return "Voto registrado correctamente";
     }
-    
+
     public List<CandidatoDTO> getVotosPorCandidato() {
         return repo.getCandidatosConVotos();
     }
-    
+
     public EstadisticaDTO getEstadisticas() {
         return repo.getEstadisticas();
+    }
+
+    public void registrarCandidato(CandidatoDTO candidato) {
+        candidato.setNumero(repo.getTarjeton().size());  
+        candidato.setVotos(0);
+        repo.agregarCandidato(candidato);
     }
 }

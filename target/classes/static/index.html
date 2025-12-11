@@ -10,29 +10,39 @@
 <body>
     <header class="encabezado">
         <h1>Elecciones Libros 2025</h1>
-        <p class="subtitulo">Sistema de Votación – Tema: Nombres de Libros</p>
+        <p class="subtitulo">Sistema de Votación – Libros como candidatos</p>
     </header>
 
     <main class="tarjeta">
+
+        <!-- BOTONES DE ACCIÓN -->
         <section class="acciones">
             <button class="btn sec" onclick="cargarTarjeton()">Tarjetón</button>
             <button class="btn sec" onclick="cargarEstadisticas()">Estadísticas</button>
             <button class="btn sec" onclick="cargarAutor()">Autor</button>
+            <button class="btn sec" onclick="mostrarFormulario()">Registrar candidato</button>
         </section>
 
+        <!-- SECCIÓN DE VOTO -->
         <h3 class="titulo-seccion">Emitir voto</h3>
-        <p class="instruccion">Selecciona una de las opciones (1 a 6):</p>
+        <p class="instruccion">Selecciona un número del tarjetón:</p>
+        <div id="listaVotos" class="votos"></div>
 
-        <section class="votos">
-            <button class="btn voto" onclick="votar(1)">1. Cien Años de Soledad</button>
-            <button class="btn voto" onclick="votar(2)">2. Amor en los Tiempos del Cólera</button>
-            <button class="btn voto" onclick="votar(3)">3. Crónica de una Muerte Anunciada</button>
-            <button class="btn voto" onclick="votar(4)">4. El Otoño del Patriarca</button>
-            <button class="btn voto" onclick="votar(5)">5. Hoja de Mar</button>
-            <button class="btn voto voto-blanco" onclick="votar(6)">6. Voto en Blanco</button>
+        <!-- FORMULARIO PARA REGISTRAR NUEVOS LIBROS -->
+        <section id="formRegistro" style="display:none; margin-top:20px;">
+            <h3>Registrar nuevo candidato</h3>
+            <label>Nombre del libro:</label>
+            <input type="text" id="nombreLibro" class="input">
+
+            <label>Partido:</label>
+            <input type="text" id="partido" class="input">
+
+            <button class="btn sec" onclick="registrarCandidato()">Registrar</button>
         </section>
 
+        <!-- RESULTADO -->
         <div id="resultado" class="resultado">Esperando acción...</div>
+
     </main>
 
     <footer class="pie">

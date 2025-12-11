@@ -1,51 +1,57 @@
 package co.edu.udistrital.elecciones.repository;
 
-import co.edu.udistrital.elecciones.model.*;
-import org.springframework.stereotype.Repository;
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import co.edu.udistrital.elecciones.model.CandidatoDTO;
+import co.edu.udistrital.elecciones.model.EstadisticaDTO;
 
 @Repository
 public class VotacionRepository {
-    private static List<CandidatoDTO> candidatos = new ArrayList<>();
-    private static int votosBlanco = 0;
 
-    static {
-        candidatos.add(new CandidatoDTO(1, "Cien Años de Soledad", "Partido Macondo", 0));
-        candidatos.add(new CandidatoDTO(2, "El Amor en los Tiempos del Cólera", "Partido Caribe", 0));
-        candidatos.add(new CandidatoDTO(3, "Crónica de una Muerte Anunciada", "Partido Realismo", 0));
-        candidatos.add(new CandidatoDTO(4, "El Otoño del Patriarca", "Partido Dictadura", 0));
-        candidatos.add(new CandidatoDTO(5, "La Hoja de Mar", "Partido Poesía", 0));
+    private final List<CandidatoDTO> candidatos = new ArrayList<>();
+    private int votosBlanco = 0;
+
+    public void agregarCandidato(CandidatoDTO candidato) {
+        candidatos.add(candidato);
     }
 
-    public List<CandidatoDTO> getCandidatos() {
-        List<CandidatoDTO> tarjeton = new ArrayList<>();
-        for (CandidatoDTO c : candidatos) {
-            tarjeton.add(new CandidatoDTO(c.getNumero(), c.getNombreLibro(), c.getPartido(), c.getVotos()));
-        }
-        tarjeton.add(new CandidatoDTO(6, "VOTO EN BLANCO", "N/A", votosBlanco));
-        return tarjeton;
+    // Tarjetón ordenado + voto en blanco al final
+    public List<CandidatoDTO> getTarjeton() {
+        List<CandidatoDTO> lista = new ArrayList<>(candidatos);
+
+        lista.add(new CandidatoDTO(
+                lista.size() + 1,
+                "VOTO EN BLANCO",
+                "N/A",
+                votosBlanco
+        ));
+
+        return lista;
     }
 
     public void registrarVoto(int numero) {
-        if (numero == 6)
+        if (numero == candidatos.size() + 1) {
             votosBlanco++;
-        else if (numero >= 1 && numero <= 5) {
-            candidatos.get(numero - 1).setVotos(candidatos.get(numero - 1).getVotos() + 1);
+        } else if (numero >= 1 && numero <= candidatos.size()) {
+            CandidatoDTO c = candidatos.get(numero - 1);
+            c.setVotos(c.getVotos() + 1);
         }
     }
 
     public List<CandidatoDTO> getCandidatosConVotos() {
-        return getCandidatos();
+        return getTarjeton();
     }
 
     public EstadisticaDTO getEstadisticas() {
         int total = votosBlanco;
-        for (CandidatoDTO c : candidatos)
-            total += c.getVotos();
+        for (CandidatoDTO c : candidatos) total += c.getVotos();
 
         EstadisticaDTO stats = new EstadisticaDTO();
-        stats.setCandidatos(getCandidatos());
+        stats.setCandidatos(getTarjeton());
         stats.setTotalVotos(total);
         stats.setFechaConsulta(LocalDateTime.now());
         return stats;
